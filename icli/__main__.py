@@ -16,13 +16,13 @@ if sys.version_info >= (3, 12):
     asyncio.get_event_loop().set_task_factory(asyncio.eager_task_factory)
 
 CONFIG_DEFAULT = dict(
-    ICLI_IBKR_HOST="127.0.0.1", ICLI_IBKR_PORT=4001, ICLI_REFRESH=3.33
+    ICLI_IBKR_HOST="127.0.0.1", ICLI_IBKR_PORT=7297, ICLI_REFRESH=3.33
 )
 
 CONFIG = {**CONFIG_DEFAULT, **dotenv_values(".env.icli"), **os.environ}
 
 try:
-    ACCOUNT_ID: str = CONFIG["ICLI_IBKR_ACCOUNT_ID"]
+    ACCOUNT_ID: str = CONFIG["U186222"]
 except:
     logger.error(
         "Sorry, please provide your IBKR Account ID [U...] in ICLI_IBKR_ACCOUNT_ID"
